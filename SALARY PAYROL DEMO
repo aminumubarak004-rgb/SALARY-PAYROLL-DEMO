@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#101a18">
+	<title>The Tax Cup | Single Employee PAYE Demo</title>
+	<style>
+		:root{font-family:Inter,"Segoe UI",Arial,sans-serif;color:#17221f;background:#f4f6f3;font-synthesis:none;font-optical-sizing:auto;--green:#153d32;--lime:#d6f06b;--coral:#ec795e;--muted:#738078;--line:#e2e8e2;--card:#fff}
+		*{box-sizing:border-box}body{margin:0;min-width:320px}button,input{font:inherit}button{cursor:pointer}.shell{max-width:1200px;margin:auto;padding:24px 28px 42px}.topbar{display:flex;justify-content:space-between;align-items:center;padding:6px 0 24px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;color:var(--green)}.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--green);color:var(--lime);font-weight:900;font-size:21px}.brand-name{font-weight:850;letter-spacing:.08em;font-size:17px}.brand-name em{font-style:normal;color:#b5674d}.brand-tag{display:block;margin-top:3px;font-size:9px;letter-spacing:.12em;color:var(--muted)}.jurisdiction{font-size:11px;letter-spacing:.11em;color:var(--muted);font-weight:700}.intro{padding:28px 0 24px}.eyebrow{color:#b5674d;text-transform:uppercase;font-size:10px;letter-spacing:.18em;font-weight:800}.intro h1{margin:7px 0;font-size:clamp(28px,4vw,44px);letter-spacing:-.05em;color:var(--green)}.intro p{margin:0;color:var(--muted);max-width:600px;line-height:1.6;font-size:14px}.layout{display:grid;grid-template-columns:minmax(340px,.93fr) minmax(380px,1.07fr);gap:18px;align-items:start}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 12px 35px #183a2b0a}.input-card{border-top:4px solid var(--coral)}.result-card{border-top:4px solid #bbd55b}.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:19px}.step{flex:none;color:#b5674d;font-family:monospace;font-size:11px;font-weight:700;padding-top:4px}.title-wrap{display:flex;gap:12px}.card h2{margin:0;color:var(--green);font-size:19px;letter-spacing:-.03em}.sub{display:block;color:var(--muted);font-size:12px;margin-top:5px}.segmented{display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:11px;background:#f0f3ef;margin-bottom:20px}.segmented button{border:0;background:transparent;padding:10px;border-radius:8px;color:#68766e;font-size:12px;font-weight:750}.segmented button.active{background:var(--green);color:white;box-shadow:0 3px 8px #153d3220}.field-label{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:16px 0 8px;font-size:12px;font-weight:750;color:#33443b}.hint{font-size:11px;color:var(--muted);margin:7px 0 14px;line-height:1.45}.text-input,.money-input{display:flex;align-items:center;min-height:46px;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}.text-input:focus-within,.money-input:focus-within,.allocation-grid input:focus{outline:2px solid #d6f06b;outline-offset:1px}.text-input input,.money-input input{width:100%;border:0;outline:0;background:transparent;padding:12px;font-size:14px;color:#19241f}.money-input>span:first-child{padding-left:13px;color:#607067;font-weight:750}.money-input .suffix{padding:0 12px;color:var(--muted);font-size:11px;white-space:nowrap}.unit-toggle{display:flex;padding:3px;border-radius:8px;background:#f0f3ef}.unit-toggle button{border:0;background:none;border-radius:6px;padding:6px 9px;color:#738078;font-size:10px;font-weight:750}.unit-toggle button.active{background:white;color:var(--green);box-shadow:0 1px 4px #14251b1a}.section-title{margin:20px 0 8px;font-size:12px;font-weight:850;color:var(--green)}.allocation-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.allocation-grid label{display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid var(--line);border-radius:9px;padding:8px 10px;font-size:11px;color:#48584e}.allocation-grid label div{display:flex;align-items:center;gap:4px}.allocation-grid input{width:47px;border:1px solid var(--line);border-radius:5px;padding:5px 3px;text-align:right;font-size:11px}.allocation-grid b{font-size:10px;color:var(--muted)}.allocation-total{display:flex;justify-content:space-between;gap:10px;margin:9px 0 2px;font-size:10px;color:var(--muted)}.allocation-total strong{color:var(--green)}.invalid{color:#c14432!important}.check-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #edf0ed;font-size:12px;color:#33443b}.check-row input{accent-color:var(--green);width:15px;height:15px}.check-row small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.check-row b{margin-left:auto;color:#78817b;font-size:10px}.hidden{display:none}.calculate{display:flex;justify-content:space-between;align-items:center;width:100%;border:0;border-radius:11px;background:var(--green);color:white;padding:14px 16px;margin-top:19px;font-weight:800;font-size:13px}.calculate:hover{background:#205440}.print-button{border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--green);padding:8px 10px;font-size:10px;font-weight:750}.hero{padding:18px;border-radius:13px;background:#f3f6ef}.hero span{display:block;color:var(--muted);font-size:11px}.hero strong{display:block;margin:4px 0;color:var(--green);font-size:clamp(30px,4vw,42px);letter-spacing:-.055em}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0}.metric{border:1px solid var(--line);border-radius:10px;padding:11px}.metric span{display:block;color:var(--muted);font-size:10px}.metric strong{display:block;margin-top:5px;font-size:14px;color:#293b32}.band-box{border:1px solid var(--line);border-radius:11px;padding:13px;margin-top:14px}.break-head{display:flex;justify-content:space-between;gap:10px;color:var(--green);font-size:11px;font-weight:800;margin-bottom:8px}.break-head span+span{color:var(--muted);font-size:9px;font-weight:600}.band-row,.earn-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid #eef1ee;color:#58675e;font-size:10px}.band-row strong{color:#293b32}.pay-break{margin-top:16px}.bar{height:8px;display:flex;overflow:hidden;border-radius:10px;background:#edf0ec}.bar i{display:block;height:100%}.gross-bar{background:#315d4e}.pension-bar{background:#aecb55}.nhf-bar{background:#8fb1a0}.tax-bar{background:#e77b62}.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin-top:10px}.legend span{display:flex;align-items:center;gap:6px;color:#59675f;font-size:10px}.legend b{margin-left:auto;color:#26372f}.dot{width:7px;height:7px;border-radius:50%;background:#315d4e}.dot.pension{background:#aecb55}.dot.nhf{background:#8fb1a0}.dot.tax{background:#e77b62}.earnings{margin-top:16px;border:1px solid var(--line);border-radius:11px;padding:13px}.earn-row span{display:flex;gap:6px;align-items:center}.earn-row small{color:var(--muted)}.earn-row strong{color:#293b32}.note{margin-top:15px;padding:11px;border-radius:9px;background:#f6f7f4;color:#728078;font-size:10px;line-height:1.5}.note strong{color:#40544a}.footer{display:flex;justify-content:space-between;gap:14px;margin-top:18px;color:#88928b;font-size:9px;letter-spacing:.06em}.toast{min-height:14px;margin:6px 0 0;color:#a44735;font-size:10px}
+		@media(max-width:800px){.shell{padding:18px 14px 30px}.layout{grid-template-columns:1fr}.card{padding:19px}.intro{padding:22px 0 18px}.jurisdiction{font-size:9px}.topbar{align-items:flex-start}.footer{flex-direction:column}}
+		@media print{body{background:white}.shell{max-width:none;padding:0}.topbar,.intro,.input-card,.print-button,.footer{display:none!important}.layout{display:block}.card{border:0;box-shadow:none;padding:0}.result-card{border-top:0}.hero,.band-box,.earnings,.metric{break-inside:avoid}}
+	</style>
+</head>
+<body>
+	<main class="shell">
+		<header class="topbar">
+			<div class="brand"><span class="brand-mark">₦</span><span><span class="brand-name">THE <em>TAX</em> CUP</span><small class="brand-tag">SIMPLIFYING TAX &amp; COMPLIANCE</small></span></div>
+			<span class="jurisdiction">NIGERIA / 2026 MODEL</span>
+		</header>
+		<section class="intro"><span class="eyebrow">Single employee calculator</span><h1>Salary, made clearer.</h1><p>Estimate take-home pay, review the tax bands, and see how gross salary is allocated across earnings and deductions.</p></section>
+		<section class="layout">
+			<section class="card input-card">
+				<div class="card-head"><div class="title-wrap"><span class="step">01</span><div><h2>Employee calculation</h2><span class="sub">Enter salary and applicable deductions</span></div></div></div>
+				<div class="segmented" role="tablist" aria-label="Calculation mode"><button type="button" class="mode active" data-mode="gross" aria-selected="true">Gross to net</button><button type="button" class="mode" data-mode="net" aria-selected="false">Net to gross</button></div>
+				<form id="calculator-form">
+					<label class="field-label" for="employee-name"><span>Employee name</span><span class="sub">Optional</span></label>
+					<div class="text-input"><input id="employee-name" type="text" placeholder="Enter employee name" autocomplete="name"></div>
+					<label class="field-label" for="salary"><span id="salary-label">Gross salary</span><span class="unit-toggle"><button type="button" class="unit active" data-unit="monthly">Monthly</button><button type="button" class="unit" data-unit="annual">Annual</button></span></label>
+					<div class="money-input"><span>₦</span><input id="salary" type="number" min="0" step="any" value="500000" required><span class="suffix" id="salary-suffix">/ month</span></div>
+					<p class="hint" id="salary-hint">Enter gross salary before deductions.</p>
+					<div class="section-title">Gross salary composition</div><p class="hint">Set the portion assigned to each earnings category. The total must equal 100%.</p>
+					<div class="allocation-grid">
+						<label><span>Basic salary</span><div><input class="allocation" data-key="basic" type="number" min="0" step="any" value="50"><b>%</b></div></label>
+						<label><span>Housing</span><div><input class="allocation" data-key="housing" type="number" min="0" step="any" value="20"><b>%</b></div></label>
+						<label><span>Transport</span><div><input class="allocation" data-key="transport" type="number" min="0" step="any" value="15"><b>%</b></div></label>
+						<label><span>Other allowances</span><div><input class="allocation" data-key="other" type="number" min="0" step="any" value="15"><b>%</b></div></label>
+					</div>
+					<div class="allocation-total"><span>Allocated <strong id="allocation-total">100%</strong></span><span id="allocation-status">Ready to calculate</span></div>
+					<div class="section-title">Deductions &amp; benefits</div>
+					<label class="check-row"><input id="pension" type="checkbox" checked><span><strong>Pension contribution</strong><small>8% of basic + housing + transport</small></span><b>8%</b></label>
+					<label class="check-row"><input id="nhf" type="checkbox" checked><span><strong>NHF contribution</strong><small>2.5% of basic salary</small></span><b>2.5%</b></label>
+					<label class="field-label" for="annual-rent"><span>Annual rent paid</span><span class="sub">20% relief / max ₦500,000</span></label>
+					<div class="money-input"><span>₦</span><input id="annual-rent" type="number" min="0" step="any" value="0"><span class="suffix">/ year</span></div>
+					<label class="field-label" for="statutory"><span>Other statutory deductions</span><span class="sub">Monthly amount</span></label>
+					<div class="money-input"><span>₦</span><input id="statutory" type="number" min="0" step="any" value="0"><span class="suffix">/ month</span></div>
+					<label class="check-row"><input id="other-enabled" type="checkbox"><span><strong>Other monthly deductions</strong><small>Health, loan, or other payroll items</small></span><b>+</b></label>
+					<div class="money-input hidden" id="other-wrap"><span>₦</span><input id="other" type="number" min="0" step="any" value="0"><span class="suffix">/ month</span></div>
+					<button class="calculate" type="submit"><span>Calculate salary</span><span>↗</span></button>
+					<p class="toast" id="validation-message" aria-live="polite"></p>
+				</form>
+			</section>
+			<section class="card result-card" aria-live="polite">
+				<div class="card-head"><div class="title-wrap"><span class="step">02</span><div><h2>Your estimate</h2><span class="sub" id="report-name">Employee salary report</span></div></div><button class="print-button" id="print" type="button">Print / PDF ↗</button></div>
+				<div class="hero"><span id="result-label">Estimated net pay</span><strong id="net-result">₦0</strong><span id="result-period">per month</span></div>
+				<div class="metrics"><div class="metric"><span>Annual PAYE</span><strong id="paye-result">₦0</strong></div><div class="metric"><span>Annual gross</span><strong id="gross-result">₦0</strong></div><div class="metric"><span>Rent relief</span><strong id="relief-result">₦0</strong></div><div class="metric"><span>Other statutory / month</span><strong id="stat-result">₦0</strong></div></div>
+				<div class="band-box"><div class="break-head"><span>Complete tax bands</span><span>Annual taxable income</span></div><div id="tax-band-list"></div></div>
+				<div class="pay-break"><div class="break-head"><span>Pay breakdown</span><span>Monthly view</span></div><div class="bar"><i class="gross-bar"></i><i class="pension-bar"></i><i class="nhf-bar"></i><i class="tax-bar"></i></div><div class="legend"><span><i class="dot"></i>Gross <b id="gross-legend">₦0</b></span><span><i class="dot pension"></i>Pension <b id="pension-legend">₦0</b></span><span><i class="dot nhf"></i>NHF <b id="nhf-legend">₦0</b></span><span><i class="dot tax"></i>PAYE <b id="tax-legend">₦0</b></span><span>Other statutory <b id="statutory-legend">₦0</b></span></div></div>
+				<div class="earnings"><div class="break-head"><span>Earnings composition</span><span>Monthly allocation</span></div><div id="earnings-list"></div></div>
+				<p class="note"><strong>Important:</strong> This estimate follows the configured 2026 Nigerian PAYE bands shown above. Confirm rates, exemptions, and employer policy with a qualified payroll adviser before processing.</p>
+			</section>
+		</section>
+		<footer class="footer"><span>THE TAX CUP / SINGLE EMPLOYEE DEMO</span><span>Standalone calculator · no upload of employee data</span></footer>
+	</main>
+	<script>
+		(() => {
+			'use strict';
+			const bands = [
+				{ name: 'First ₦800,000', amount: 800000, rate: 0 },
+				{ name: 'Next ₦2,200,000', amount: 2200000, rate: 0.15 },
+				{ name: 'Next ₦9,000,000', amount: 9000000, rate: 0.18 },
+				{ name: 'Next ₦13,000,000', amount: 13000000, rate: 0.21 },
+				{ name: 'Next ₦25,000,000', amount: 25000000, rate: 0.23 },
+				{ name: 'Excess above ₦50,000,000', amount: Infinity, rate: 0.25 }
+			];
+			const names = { basic: 'Basic salary', housing: 'Housing allowance', transport: 'Transport allowance', other: 'Other allowances' };
+			const state = { mode: 'gross', unit: 'monthly' };
+			const $ = (id) => document.getElementById(id);
+			const amount = (value) => Math.max(0, Number(value) || 0);
+			const currency = (value) => new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 }).format(Math.max(0, value));
+			function taxOn(income) {
+				let rest = Math.max(0, income);
+				let tax = 0;
+				for (const band of bands) {
+					const slice = Math.min(rest, band.amount);
+					if (slice <= 0) break;
+					tax += slice * band.rate;
+					rest -= slice;
+				}
+				return tax;
+			}
+			function allocations() {
+				return Object.fromEntries(Object.keys(names).map((key) => [key, amount(document.querySelector(`[data-key="${key}"]`).value)]));
+			}
+			function compute(gross) {
+				const parts = allocations();
+				const earnings = Object.fromEntries(Object.keys(parts).map((key) => [key, gross * parts[key] / 100]));
+				const pension = $('pension').checked ? (earnings.basic + earnings.housing + earnings.transport) * 0.08 : 0;
+				const nhf = $('nhf').checked ? earnings.basic * 0.025 : 0;
+				const statutory = amount($('statutory').value);
+				const other = $('other-enabled').checked ? amount($('other').value) : 0;
+				const annualGross = gross * 12;
+				const rentRelief = Math.min(amount($('annual-rent').value) * 0.2, 500000);
+				const annualTaxable = Math.max(0, annualGross - (pension + nhf) * 12 - rentRelief);
+				const paye = taxOn(annualTaxable) / 12;
+				const net = Math.max(0, gross - pension - nhf - paye - statutory - other);
+				return { gross, earnings, parts, pension, nhf, statutory, other, annualGross, rentRelief, paye, net };
+			}
+			function currentCalculation() {
+				const entered = amount($('salary').value) * (state.unit === 'annual' ? 1 / 12 : 1);
+				if (state.mode === 'gross') return compute(entered);
+				let low = entered;
+				let high = Math.max(entered * 2 + 100000, 100000);
+				while (compute(high).net < entered && high < 1e12) high *= 1.5;
+				for (let index = 0; index < 70; index += 1) {
+					const middle = (low + high) / 2;
+					if (compute(middle).net < entered) low = middle;
+					else high = middle;
+				}
+				return compute(high);
+			}
+			function render() {
+				const total = Object.values(allocations()).reduce((sum, part) => sum + part, 0);
+				const valid = Math.abs(total - 100) < 0.005;
+				$('allocation-total').textContent = `${total.toFixed(2).replace(/\.00$/, '')}%`;
+				$('allocation-status').textContent = valid ? 'Ready to calculate' : `${Math.abs(100 - total).toFixed(2).replace(/\.00$/, '')}% ${total < 100 ? 'remaining' : 'over'}`;
+				$('allocation-status').classList.toggle('invalid', !valid);
+				$('validation-message').textContent = valid ? '' : 'Earnings allocations must total exactly 100%.';
+				if (!valid) return;
+				const result = currentCalculation();
+				const headline = state.mode === 'net' ? result.gross : result.net;
+				$('net-result').textContent = currency(headline * (state.unit === 'annual' ? 12 : 1));
+				$('result-label').textContent = state.mode === 'net' ? 'Required gross pay' : 'Estimated net pay';
+				$('result-period').textContent = state.unit === 'annual' ? 'annual equivalent' : 'per month';
+				$('report-name').textContent = $('employee-name').value.trim() || 'Employee salary report';
+				$('paye-result').textContent = currency(result.paye * 12);
+				$('gross-result').textContent = currency(result.annualGross);
+				$('relief-result').textContent = currency(result.rentRelief);
+				$('stat-result').textContent = currency(result.statutory);
+				$('gross-legend').textContent = currency(result.gross);
+				$('pension-legend').textContent = currency(result.pension);
+				$('nhf-legend').textContent = currency(result.nhf);
+				$('tax-legend').textContent = currency(result.paye);
+				$('statutory-legend').textContent = currency(result.statutory);
+				$('tax-band-list').innerHTML = bands.map((band) => `<div class="band-row"><span>${band.name}</span><strong>${(band.rate * 100).toFixed(0)}%</strong></div>`).join('');
+				$('earnings-list').innerHTML = Object.keys(names).map((key) => `<div class="earn-row"><span>${names[key]} <small>${result.parts[key]}%</small></span><strong>${currency(result.earnings[key])}</strong></div>`).join('');
+				const scale = Math.max(result.gross, 1);
+				document.querySelector('.gross-bar').style.width = `${Math.max(0, (result.net / scale) * 100)}%`;
+				document.querySelector('.pension-bar').style.width = `${(result.pension / scale) * 100}%`;
+				document.querySelector('.nhf-bar').style.width = `${(result.nhf / scale) * 100}%`;
+				document.querySelector('.tax-bar').style.width = `${(result.paye / scale) * 100}%`;
+			}
+			document.querySelectorAll('.mode').forEach((button) => button.addEventListener('click', () => {
+				state.mode = button.dataset.mode;
+				document.querySelectorAll('.mode').forEach((item) => { item.classList.toggle('active', item === button); item.setAttribute('aria-selected', String(item === button)); });
+				$('salary-label').textContent = state.mode === 'net' ? 'Target net salary' : 'Gross salary';
+				$('salary-hint').textContent = state.mode === 'net' ? 'Enter the take-home pay the employee wants to receive.' : 'Enter gross salary before deductions.';
+				render();
+			}));
+			document.querySelectorAll('.unit').forEach((button) => button.addEventListener('click', () => {
+				state.unit = button.dataset.unit;
+				document.querySelectorAll('.unit').forEach((item) => item.classList.toggle('active', item === button));
+				$('salary-suffix').textContent = state.unit === 'annual' ? '/ year' : '/ month';
+				render();
+			}));
+			document.querySelectorAll('input').forEach((input) => input.addEventListener('input', render));
+			$('other-enabled').addEventListener('change', () => { $('other-wrap').classList.toggle('hidden', !$('other-enabled').checked); render(); });
+			$('calculator-form').addEventListener('submit', (event) => { event.preventDefault(); render(); });
+			$('print').addEventListener('click', () => window.print());
+			render();
+		})();
+	</script>
+</body>
+</html>
