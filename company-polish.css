@@ -1,0 +1,117 @@
+/* Keep the company workspace header ordered and prevent duplicate print branding on screen. */
+.company-topbar {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  min-height: 58px;
+}
+
+.company-topbar > .back-link {
+  justify-self: start;
+  white-space: nowrap;
+}
+
+.company-topbar > .brand {
+  justify-self: center;
+  min-width: 0;
+  max-width: 100%;
+  gap: 10px;
+}
+
+.company-topbar > .brand .brand-logo {
+  display: block;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.company-topbar > .brand .brand-copy {
+  min-width: 0;
+  max-width: 280px;
+}
+
+.company-topbar > .brand .brand-name {
+  font-size: 18px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.company-topbar > .brand .brand-tagline {
+  display: block;
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+.company-topbar > .company-state {
+  justify-self: end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.company-shell > .pdf-brand {
+  display: none !important;
+}
+
+.company-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  align-items: end;
+  gap: 40px;
+  padding: clamp(52px, 7vw, 76px) 0 42px;
+}
+
+.company-heading > div,
+.company-heading .company-copy {
+  min-width: 0;
+}
+
+.company-heading h1 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.company-heading .company-copy {
+  margin: 0 0 4px;
+}
+
+@media (max-width: 700px) {
+  .company-topbar {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+
+  .company-topbar > .brand {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .company-topbar > .back-link {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .company-topbar > .company-state {
+    grid-column: 2;
+    grid-row: 2;
+    white-space: normal;
+  }
+
+  .company-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 42px 0 30px;
+  }
+
+  .company-heading .company-copy {
+    max-width: 420px;
+  }
+}
+
+@media print {
+  .company-shell > .pdf-brand {
+    display: flex !important;
+  }
+}

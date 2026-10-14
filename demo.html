@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Tax Cup | Payroll demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="brand.css">
+  <link rel="stylesheet" href="header-brand.css">
+  <link rel="stylesheet" href="payroll.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <main class="payroll-shell demo-shell">
+    <header class="payroll-topbar">
+      <a class="back-link" href="login.html">← Sign in</a>
+      <div class="brand"><img class="brand-logo" src="tax-cup-logo.svg" alt="The Tax Cup logo"><span class="brand-copy"><span class="brand-name">THE <em>TAX</em> CUP</span><small class="brand-tagline">SIMPLIFYING TAX &amp; COMPLIANCE FOR BUSINESSES</small></span></div>
+      <span class="demo-badge">PUBLIC DEMO · SAMPLE DATA ONLY</span>
+    </header>
+
+    <section class="payroll-heading">
+      <div><p class="kicker">Explore the product</p><h1>Payroll<br><span>demo.</span></h1></div>
+      <div class="heading-copy"><p>Explore the payroll workflow using fictional example records. This public preview is separate from the private workspace.</p><span class="prototype-note">READ ONLY / NO CUSTOMER DATA</span></div>
+    </section>
+
+    <div class="demo-notice" role="note"><strong>Safe demo environment</strong><span>Every name and payroll figure below is fictional. This page does not load, save, or change private employee or payroll records.</span></div>
+
+    <nav class="module-nav" aria-label="Demo sections">
+      <button class="nav-tab active" type="button" data-view="dashboard">Dashboard</button>
+      <button class="nav-tab" type="button" data-view="records">Salary history</button>
+      <button class="nav-tab" type="button" data-view="employee-report">Employee report</button>
+      <button class="nav-tab" type="button" data-view="company-report">Payroll report</button>
+    </nav>
+
+    <section class="view active" id="dashboard-view">
+      <div class="view-head"><div><p class="kicker">Sample overview</p><h2>Payroll dashboard</h2></div><div class="filter-inline"><label>Period <select id="dashboard-period"><option value="all">All sample periods</option></select></label><label>Department <select id="dashboard-department"><option value="">All departments</option></select></label></div></div>
+      <div class="metric-grid"><article class="metric"><span>Employees</span><strong id="metric-employees">0</strong><small>fictional sample team</small></article><article class="metric"><span>Paid</span><strong id="metric-paid">0</strong><small id="metric-paid-note">of 0 records</small></article><article class="metric"><span>Gross payroll</span><strong id="metric-gross">₦0</strong><small>selected sample period</small></article><article class="metric accent"><span>Net payable</span><strong id="metric-net">₦0</strong><small>after sample deductions</small></article><article class="metric"><span>Total deductions</span><strong id="metric-deductions">₦0</strong><small>PAYE, pension and others</small></article><article class="metric"><span>Pending payment</span><strong id="metric-pending">0</strong><small>sample records to action</small></article></div>
+      <div class="dashboard-grid"><article class="surface chart-surface"><div class="surface-head"><h3>Monthly payroll trend</h3><span>Gross / net</span></div><div class="trend" id="trend-chart"></div></article><article class="surface chart-surface"><div class="surface-head"><h3>Payment status</h3><span>Selected sample period</span></div><div class="status-chart" id="status-chart"></div></article><article class="surface chart-surface"><div class="surface-head"><h3>Payroll by department</h3><span>Sample gross</span></div><div class="department-chart" id="department-chart"></div></article><article class="surface"><div class="surface-head"><h3>Deduction breakdown</h3><span>Selected sample period</span></div><div class="deduction-list" id="deduction-chart"></div></article></div>
+    </section>
+
+    <section class="view" id="records-view">
+      <div class="view-head"><div><p class="kicker">Fictional snapshots</p><h2>Sample salary records</h2></div></div>
+      <div class="filters surface"><label>Period <select id="record-period"><option value="">All periods</option></select></label><label>Department <select id="record-department"><option value="">All departments</option></select></label><label>Status <select id="record-status"><option value="">All statuses</option><option>Draft</option><option>Under Review</option><option>Approved</option></select></label><label class="search-field">Search <input id="record-search" type="search" placeholder="Name or department"></label></div>
+      <div class="surface table-surface"><div class="table-wrap"><table><thead><tr><th>Period</th><th>Employee</th><th>Department</th><th>Gross</th><th>Deductions</th><th>Net pay</th><th>Workflow</th><th>Payment</th></tr></thead><tbody id="records-body"></tbody></table></div><p class="empty-message hidden" id="records-empty">No sample records match these filters.</p></div>
+    </section>
+
+    <section class="view" id="employee-report-view">
+      <div class="view-head"><div><p class="kicker">Individual example</p><h2>Employee payroll report</h2></div><label class="demo-select">Sample employee <select id="report-employee"></select></label></div>
+      <div class="report-output surface" id="employee-report-output"></div>
+    </section>
+
+    <section class="view" id="company-report-view">
+      <div class="view-head"><div><p class="kicker">Fictional company summary</p><h2>Payroll reporting</h2></div><label class="demo-select">Sample period <select id="company-period"><option value="all">All sample periods</option></select></label></div>
+      <div class="summary-grid" id="company-summary"></div>
+      <div class="surface table-surface"><div class="table-wrap"><table><thead><tr><th>Employee</th><th>Department</th><th>Basic</th><th>Allowances</th><th>Gross</th><th>Deductions</th><th>Net</th></tr></thead><tbody id="company-body"></tbody></table></div></div>
+    </section>
+
+    <footer><span>THE TAX CUP / PUBLIC PRODUCT DEMO</span><span>Fictional sample content · read-only · no private data</span></footer>
+  </main>
+  <script src="demo.js" defer></script>
+</body>
+</html>
